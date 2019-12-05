@@ -104,7 +104,7 @@
 
 						var iconcode = json.weather[0].icon;
 						console.log(iconcode);
-						var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+						var iconurl = "https://openweathermap.org/img/w/" + iconcode + ".png";
 						$('#tempImg').attr('src', iconurl);
 
 							if (!$('input[value="metric"]').prop('checked')){
