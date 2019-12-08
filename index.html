@@ -10,6 +10,8 @@
 		padding: 5px;
 	}
 	#forecast{
+		display:none;
+
 		/*This div should not appear until the weather is returned.*/
 	}
 	#forecast div{
@@ -17,51 +19,36 @@
 		border: 8px solid blue;
 		margin: 0 auto;
 		background: black;
+
 	}
 	img{
 		width:100%;
 	}
 </style>
 <script>
+
+
+		// $("#getIt").click(function() {
+		// 	 {
+		// 		$("#forecast").show();
+		// 	} else {
+		// 			$("#forecast").hide();
+		// 	}
+		// });
+
     function gettingJSON(){
     	console.log("Hi")
 
-			//how to set the current temperature of the API to the what syntax
-			//curTemp  what syntax
+			$("#forecast").show();
+
+
+
 			var location = $('#location')
 			var curTemp = $('#temp')
 			var highTemp = $('#high')
 			var lowTemp = $('#low')
 			var icon = $('#tempImg')
-    	// Use the OpenWeather API to return:
-    	//  the current temperature
-    	//  the high temperature for the day
-    	//  the low temperature for the day
-    	//  the icon for the current weather.
 
-
-			// $(document).ready(function(){
-			// $('#ch3form').submit(function() {
-			// 	console.log('test')
-			//
-
-			// radio dial buttons
-			// var len1 = $('input[name="standing"]:checked');
-		  // var len2 = $('input[name="fruit"]:checked');
-			// console.log(len1.val())
-			// console.log(len2)
-			//
-			// if (len1.val() == undefined) {
-			// 	alert("You must pick your year!");
-			// 	return false;
-			// }
-			//
-		  // if (len2.val() == undefined) {
-			// alert("You must pick a fruit!");
-		  // return false;
-		  // }
-
-    	// You will need to update this query with the city, weather format (Celsius or Fahrenheit) and your OpenWeatherMap ID
 			var city = "Ann Arbor";
 
 			if (!location.val()) {
@@ -86,19 +73,6 @@
 			}
 
 
-
-
-//if F clicked then change the api to this url &units=imperial
-//create imperial.metric as a variable
-
-
-				// if(this.checked == false) {
-				// 	$("#home").val("").prop("readonly", false);
-				// }
-
-
-				//shouldn't this only fill in once the button is checked?
-
         $.getJSON(query,function(json){
             console.log(JSON.stringify(json));
 
@@ -119,34 +93,9 @@
 								lowTemp.text(json["main"].temp_min + ' C');
 							}
 
-
-
-
-							//to F from K
-							// console.log(json["main"].temp_max);
-							// highTemp.text(json.main.temp_max);
-							// highTemp.text(json.main.temp_max);
-							//
-							// console.log(json["main"].temp_min);
-							// lowTemp.text(json["main"].temp_min);
-							// lowTemp.text(json["main"].temp_min);
-							// console.log(json.weather.icon);
-							// icon.text(json.weather.icon);
-
-							//taking the
-
-							//change to Fahreheit
-							// console.log(json.)
-							// $('')
-
-    })
-}
-
-		//takeout  $loc andnchange  to Ann arbor default - get and set
-		//same thing with Fahreheit set the radio to be Fahreheit by default
-		//temp img src put in from api -- default Ann arbor
-		//high and low get adn set default to Ann arbor
-
+						})
+				}
+    
 
 
     </script>
